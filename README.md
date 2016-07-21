@@ -1,6 +1,4 @@
-# AWS Lambda EC2 Snapshots using Node or Python
-
-## Quick Start
+# Setup Guide
 - Copy the code from either snapshots.js or snapshots.py into a new Lambda function
 - Use a similar AIM policy to allow access to EC2 tags, snapshots, etc. 
   **Replace `ec2-snapshots` with the name of your Lambda function**
