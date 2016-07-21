@@ -42,6 +42,8 @@
 }
 ```
 
+- Set the Lambda's function Trigger to a "CloudWatch Events - Schedule". 
+  This can be set from within the Lambda function console under the "Triggers" tab 
 - Add the following tags to the EC2 instance(s) you want snapshots created
 
 |  Tag | Value | Description |
