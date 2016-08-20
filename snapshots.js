@@ -13,8 +13,10 @@ exports.handler = function(event, context) {
    ec2.describeInstances(createParams, function(err, data) {
       if (err) console.log(err, err.stack);
       else{
-         for(var i=0; i<data.Reservations[0].Instances.length; i++){
-            createSnapshots(data.Reservations[0].Instances[i]);
+         for(var r=0; r<data.Reservations.length; r++){
+            for(var i=0; i<data.Reservations[r].Instances.length; i++){
+               createSnapshots(data.Reservations[r].Instances[i]);
+            }
          }
       }
    });
