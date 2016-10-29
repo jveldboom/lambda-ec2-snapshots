@@ -65,7 +65,7 @@ function deleteSnapshot(snapshotId){
    var params = {SnapshotId: snapshotId};
    ec2.deleteSnapshot(params, function(err, data) {
       if (err) console.log(err, err.stack);
-      else     console.log('Deleted snapshot id '+data.Snapshots[s].SnapshotId);
+      else     console.log('Deleted snapshot id '+snapshotId);
    });
 }
 
