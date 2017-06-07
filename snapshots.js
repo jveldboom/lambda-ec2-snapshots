@@ -41,7 +41,6 @@ exports.handler = function(event, context) {
 function createSnapshots(instance){
    var volumes = getInstanceVolumes(instance);
    var retention = getTag(instance.Tags,'Retention');
-   var date = new Date();
 
    for(var v=0; v<volumes.length; v++)
    {
@@ -54,6 +53,7 @@ function createSnapshots(instance){
       ec2.createSnapshot(params, function(err, data) {
          if (err) console.log(err, err.stack); // an error occurred
          else{
+            var date = new Date();
             date.setDate(date.getDate() + parseInt(retention));
             tagSnapshot(data.SnapshotId,formatDate(date));
          }
